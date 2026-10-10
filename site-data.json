@@ -281,15 +281,15 @@
       "title": "Éclairages",
       "group": "Location de matériel",
       "source": "https://www.fix-events.fr/eclairages/",
-      "hero_image": "assets/secondary/1dd95011d3edd899.webp",
-      "subtitle": "Pour tout renseignement ou demande de location, contactez-nous",
+      "hero_image": "assets/flexibility.jpeg",
+      "subtitle": "Ambiance, piste de danse ou mise en lumière : trouvez les équipements adaptés à votre lieu.",
       "intro": [],
       "sections": [],
       "photos": [],
       "kind": "catalogue",
       "products": [
         {
-          "type": "MUTLI-FAISCEAUX",
+          "type": "MULTI-FAISCEAUX",
           "name": "Chauvet DJ Gigbar 2",
           "specs": [
             "Système tout-en-1",
@@ -300,7 +300,11 @@
           "description": "",
           "price": "45€ TTC / JOUR",
           "amount": 45,
-          "image": "assets/secondary/6bd8c75b4ef92a01.webp"
+          "image": "assets/secondary/6bd8c75b4ef92a01.webp",
+          "id": "eclairages-aed7312ddb",
+          "use": "Animer une piste de danse avec un ensemble de jeux de lumière.",
+          "need": "danse",
+          "badges": []
         },
         {
           "type": "BAR LED",
@@ -313,7 +317,11 @@
           "description": "",
           "price": "25€ TTC / JOUR",
           "amount": 25,
-          "image": "assets/secondary/c3d1881e1cd3d4eb.webp"
+          "image": "assets/secondary/c3d1881e1cd3d4eb.webp",
+          "id": "eclairages-3df42211e5",
+          "use": "Créer une ambiance colorée sur un décor ou une piste.",
+          "need": "ambiance",
+          "badges": []
         },
         {
           "type": "LYRE SPOT",
@@ -327,7 +335,11 @@
           "description": "",
           "price": "50€ TTC / JOUR",
           "amount": 50,
-          "image": "assets/secondary/ac6294310eb6672c.webp"
+          "image": "assets/secondary/ac6294310eb6672c.webp",
+          "id": "eclairages-daf19341d2",
+          "use": "Projeter des motifs et des faisceaux mobiles.",
+          "need": "danse",
+          "badges": []
         },
         {
           "type": "LYRE WASH",
@@ -341,7 +353,11 @@
           "description": "",
           "price": "50€ TTC / JOUR",
           "amount": 50,
-          "image": "assets/secondary/c8f5d7062f01e61b.webp"
+          "image": "assets/secondary/c8f5d7062f01e61b.webp",
+          "id": "eclairages-2373306f66",
+          "use": "Créer des nappes de couleur sur une scène ou une piste.",
+          "need": "ambiance",
+          "badges": []
         },
         {
           "type": "LYRE SPOT",
@@ -355,7 +371,11 @@
           "description": "",
           "price": "100€ TTC / JOUR",
           "amount": 100,
-          "image": "assets/secondary/d58a7d21ff1482d3.webp"
+          "image": "assets/secondary/d58a7d21ff1482d3.webp",
+          "id": "eclairages-9e0b1e11d8",
+          "use": "Projeter des motifs et des faisceaux mobiles.",
+          "need": "danse",
+          "badges": []
         },
         {
           "type": "LYRE BEAM",
@@ -369,10 +389,14 @@
           "description": "",
           "price": "35€ TTC / JOUR",
           "amount": 35,
-          "image": "assets/secondary/d6953d9e87bd6dc7.webp"
+          "image": "assets/secondary/d6953d9e87bd6dc7.webp",
+          "id": "eclairages-a8d91f2d63",
+          "use": "Dessiner des faisceaux étroits pour une ambiance de soirée.",
+          "need": "danse",
+          "badges": []
         },
         {
-          "type": "ECLAIRAGE ARCHI",
+          "type": "ÉCLAIRAGE ARCHITECTURAL",
           "name": "Evolite Archi 150 BAT",
           "specs": [
             "Sur Batterie 8h autonomie",
@@ -383,7 +407,14 @@
           "description": "",
           "price": "40€ TTC / JOUR",
           "amount": 40,
-          "image": "assets/secondary/9d675ba74ac8abe7.webp"
+          "image": "assets/secondary/9d675ba74ac8abe7.webp",
+          "id": "eclairages-457dc0b90c",
+          "use": "Mettre en couleur une façade ou un espace, avec un appareil IP65.",
+          "need": "exterieur",
+          "badges": [
+            "Sur batterie",
+            "Usage extérieur"
+          ]
         },
         {
           "type": "PAR LED",
@@ -397,7 +428,13 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/d1d2012a95d5b739.webp"
+          "image": "assets/secondary/d1d2012a95d5b739.webp",
+          "id": "eclairages-7f32962239",
+          "use": "Mettre en couleur les murs d’une salle, sans câble d’alimentation.",
+          "need": "ambiance",
+          "badges": [
+            "Sur batterie"
+          ]
         },
         {
           "type": "KIT BOULE A FACETTES",
@@ -410,7 +447,14 @@
           "description": "",
           "price": "40€ TTC / JOUR",
           "amount": 40,
-          "image": "assets/secondary/7d21a936b968fe77.webp"
+          "image": "assets/secondary/7d21a936b968fe77.webp",
+          "id": "eclairages-96ef9fe347",
+          "use": "Créer les reflets d’une ambiance disco.",
+          "need": "danse",
+          "badges": [
+            "Sur batterie",
+            "Éléments inclus : voir détails"
+          ]
         },
         {
           "type": "LASER PRO",
@@ -423,10 +467,14 @@
           "description": "",
           "price": "90€ TTC / JOUR",
           "amount": 90,
-          "image": "assets/secondary/2183fb22eae9cf3a.webp"
+          "image": "assets/secondary/2183fb22eae9cf3a.webp",
+          "id": "eclairages-a169792f1e",
+          "use": "Créer des effets laser avec une mise en œuvre professionnelle.",
+          "need": "regie",
+          "badges": []
         },
         {
-          "type": "PROJECTEUR THEATRE",
+          "type": "PROJECTEUR DE THÉÂTRE",
           "name": "Varytec LED Theatre Spot",
           "specs": [
             "350W, 3000K",
@@ -437,7 +485,11 @@
           "description": "",
           "price": "45€ TTC / JOUR",
           "amount": 45,
-          "image": "assets/secondary/618e9b7726b915c7.webp"
+          "image": "assets/secondary/618e9b7726b915c7.webp",
+          "id": "eclairages-074539a948",
+          "use": "Éclairer un intervenant ou une scène avec une lumière chaude.",
+          "need": "scene",
+          "badges": []
         },
         {
           "type": "GRADATEUR DMX",
@@ -451,10 +503,14 @@
           "description": "",
           "price": "10€ TTC / JOUR",
           "amount": 10,
-          "image": "assets/secondary/876cf394b88f360a.webp"
+          "image": "assets/secondary/876cf394b88f360a.webp",
+          "id": "eclairages-b5f579f2b2",
+          "use": "Piloter l’intensité de projecteurs compatibles.",
+          "need": "regie",
+          "badges": []
         },
         {
-          "type": "CONTROLEUR DMX",
+          "type": "CONTRÔLEUR DMX",
           "name": "Wolfmix MK2",
           "specs": [
             "Gestion Eclairages DMX sans PC",
@@ -463,10 +519,14 @@
           "description": "",
           "price": "60€ TTC / JOUR",
           "amount": 60,
-          "image": "assets/secondary/1972126b7bd39b52.webp"
+          "image": "assets/secondary/1972126b7bd39b52.webp",
+          "id": "eclairages-a800d8d782",
+          "use": "Commander les effets lumineux de plusieurs appareils.",
+          "need": "regie",
+          "badges": []
         },
         {
-          "type": "REGIE DMX",
+          "type": "RÉGIE DMX",
           "name": "AFX DMX 384",
           "specs": [
             "384 canaux DMX : 16×24",
@@ -476,7 +536,11 @@
           "description": "",
           "price": "20€ TTC / JOUR",
           "amount": 20,
-          "image": "assets/secondary/6bee2a3b8f0d5f0b.webp"
+          "image": "assets/secondary/6bee2a3b8f0d5f0b.webp",
+          "id": "eclairages-ab3f77e709",
+          "use": "Programmer et déclencher des scènes lumineuses.",
+          "need": "regie",
+          "badges": []
         },
         {
           "type": "CONSOLE DMX PRO",
@@ -489,7 +553,11 @@
           "description": "",
           "price": "125€ TTC / JOUR",
           "amount": 125,
-          "image": "assets/secondary/97ff6d91c32cc790.webp"
+          "image": "assets/secondary/97ff6d91c32cc790.webp",
+          "id": "eclairages-99f364dc3f",
+          "use": "Piloter une installation lumière depuis une régie professionnelle.",
+          "need": "regie",
+          "badges": []
         },
         {
           "type": "SPLITTER DMX",
@@ -502,12 +570,16 @@
           "description": "",
           "price": "10€ TTC / JOUR",
           "amount": 10,
-          "image": "assets/secondary/7de370d07eff3ebd.webp"
+          "image": "assets/secondary/7de370d07eff3ebd.webp",
+          "id": "eclairages-e40ee969b3",
+          "use": "Distribuer un signal de commande lumière à plusieurs lignes.",
+          "need": "regie",
+          "badges": []
         }
       ],
       "conditions": [
         {
-          "title": "Disponibilite",
+          "title": "Disponibilité",
           "text": "Pour toute demande de location, contactez-nous via le formulaire pour valider la disponibilité."
         },
         {
@@ -519,7 +591,7 @@
           "text": "Nous pouvons livrer ou installer le matériel dans le lieu de votre choix, tarifs selon distance"
         },
         {
-          "title": "Tarif degressif",
+          "title": "Tarif dégressif",
           "text": "En cas de location longue durée, une dégressivité sera appliquée au forfait jour. Week-end du samedi au lundi = 1 jour."
         },
         {
@@ -577,15 +649,15 @@
       "title": "Effets & Vidéo",
       "group": "Location de matériel",
       "source": "https://www.fix-events.fr/effets-video/",
-      "hero_image": "assets/secondary/1dd95011d3edd899.webp",
-      "subtitle": "Pour tout renseignement ou demande de location, contactez-nous",
+      "hero_image": "assets/secondary/2dfcc3c9d693d167.webp",
+      "subtitle": "Fumée, effets scéniques et projection pour donner du relief à vos moments forts.",
       "intro": [],
       "sections": [],
       "photos": [],
       "kind": "catalogue",
       "products": [
         {
-          "type": "FUMEE PRO",
+          "type": "FUMÉE PRO",
           "name": "Chauvet Hurricane 1200",
           "specs": [
             "Liquide fourni",
@@ -595,7 +667,13 @@
           "description": "",
           "price": "20€ TTC / JOUR",
           "amount": 20,
-          "image": "assets/secondary/cae71560f2663b41.webp"
+          "image": "assets/secondary/cae71560f2663b41.webp",
+          "id": "effets-video-a891b5fa50",
+          "use": "Rendre les faisceaux lumineux visibles sur une piste.",
+          "need": "effets",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
           "type": "KIT BOULE A FACETTES",
@@ -608,10 +686,17 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/7d21a936b968fe77.webp"
+          "image": "assets/secondary/7d21a936b968fe77.webp",
+          "id": "effets-video-47aa74bbc4",
+          "use": "Créer les reflets d’une ambiance disco.",
+          "need": "danse",
+          "badges": [
+            "Sur batterie",
+            "Éléments inclus : voir détails"
+          ]
         },
         {
-          "type": "FUMEE VERTICALE",
+          "type": "FUMÉE VERTICALE",
           "name": "Mac Mah Fog Spray 3000RGB",
           "specs": [
             "Projection 4m +LED DMX,",
@@ -621,7 +706,13 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/7989b018a23307d4.webp"
+          "image": "assets/secondary/7989b018a23307d4.webp",
+          "id": "effets-video-b4a0f19f60",
+          "use": "Créer un effet de fumée verticale éclairée.",
+          "need": "effets",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
           "type": "BROUILLARD PRO",
@@ -634,10 +725,14 @@
           "description": "",
           "price": "80€ TTC / JOUR",
           "amount": 80,
-          "image": "assets/secondary/dc103221109c5b56.webp"
+          "image": "assets/secondary/dc103221109c5b56.webp",
+          "id": "effets-video-e870f225a6",
+          "use": "Mettre en valeur les lumières avec un brouillard d’ambiance.",
+          "need": "effets",
+          "badges": []
         },
         {
-          "type": "ETINCELLES FROIDES",
+          "type": "ÉTINCELLES FROIDES",
           "name": "Evolite EVO Spark 600",
           "specs": [
             "Hauteur proj. de 1 à 5m",
@@ -647,10 +742,16 @@
           "description": "",
           "price": "100€ TTC / JOUR – pack x2",
           "amount": 100,
-          "image": "assets/secondary/6f8087bebe47ba97.webp"
+          "image": "assets/secondary/6f8087bebe47ba97.webp",
+          "id": "effets-video-a7a4a97fa4",
+          "use": "Accompagner un temps fort avec des étincelles, selon les contraintes du lieu.",
+          "need": "effets",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
-          "type": "FUMEE LOURDE",
+          "type": "FUMÉE LOURDE",
           "name": "Chauvet Cumulus HP",
           "specs": [
             "Fumée épaisse au sol",
@@ -660,10 +761,16 @@
           "description": "",
           "price": "100€ TTC / JOUR",
           "amount": 100,
-          "image": "assets/secondary/5420ae2634eba055.webp"
+          "image": "assets/secondary/5420ae2634eba055.webp",
+          "id": "effets-video-f6db8ae5e0",
+          "use": "Créer une nappe de fumée au sol pour un moment de spectacle.",
+          "need": "effets",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
-          "type": "VIDEO PROJECTEUR",
+          "type": "VIDÉOPROJECTEUR",
           "name": "Optoma HD29HST",
           "specs": [
             "Focale Courte, HD 1080p",
@@ -673,10 +780,14 @@
           "description": "",
           "price": "50€ TTC / JOUR",
           "amount": 50,
-          "image": "assets/secondary/f67d05dc7f98c74e.webp"
+          "image": "assets/secondary/f67d05dc7f98c74e.webp",
+          "id": "effets-video-1e90ddceae",
+          "use": "Projeter un diaporama ou une vidéo en haute définition.",
+          "need": "video",
+          "badges": []
         },
         {
-          "type": "GRAND ECRAN VIDEO",
+          "type": "GRAND ÉCRAN VIDÉO",
           "name": "Yard Master 2, 100′",
           "specs": [
             "Image 222×125 en 16:9",
@@ -686,10 +797,14 @@
           "description": "",
           "price": "50€ TTC / JOUR",
           "amount": 50,
-          "image": "assets/secondary/01a92e1fed47621f.webp"
+          "image": "assets/secondary/01a92e1fed47621f.webp",
+          "id": "effets-video-d78f7f33cd",
+          "use": "Installer une surface de projection pour vos images.",
+          "need": "video",
+          "badges": []
         },
         {
-          "type": "ECRAN TV LED 4K",
+          "type": "ÉCRAN TV LED 4K",
           "name": "LG 65 Pouces (164cm)",
           "specs": [
             "4K, Smart TV, 50Hz",
@@ -699,10 +814,16 @@
           "description": "",
           "price": "250€ TTC / JOUR",
           "amount": 250,
-          "image": "assets/secondary/d6cc88d9f9e10ca4.webp"
+          "image": "assets/secondary/d6cc88d9f9e10ca4.webp",
+          "id": "effets-video-3b9f593f9d",
+          "use": "Afficher vos contenus sur un grand écran avec support.",
+          "need": "video",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
-          "type": "PROCESSEUR VIDEO",
+          "type": "PROCESSEUR VIDÉO",
           "name": "Novastar VX 600",
           "specs": [
             "6 entrées : SDI, HDMI, Optical",
@@ -712,10 +833,14 @@
           "description": "",
           "price": "90€ TTC / JOUR",
           "amount": 90,
-          "image": "assets/secondary/f11838be55610445.webp"
+          "image": "assets/secondary/f11838be55610445.webp",
+          "id": "effets-video-786c0b7b22",
+          "use": "Gérer plusieurs sources pour une diffusion sur écran LED.",
+          "need": "regie",
+          "badges": []
         },
         {
-          "type": "MUR ECRAN LED",
+          "type": "MUR ÉCRAN LED",
           "name": "Dalles 50×50",
           "specs": [
             "Pitch 3,9, plat ou incurvé",
@@ -725,10 +850,16 @@
           "description": "",
           "price": "a partir de 350€ TTC / JOUR",
           "amount": 350,
-          "image": "assets/secondary/490d40bdbbed2f3c.webp"
+          "image": "assets/secondary/490d40bdbbed2f3c.webp",
+          "id": "effets-video-cd2a5a9011",
+          "use": "Créer une surface vidéo adaptée à votre événement.",
+          "need": "video",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
-          "type": "PRATICABLE DE SCENE",
+          "type": "PRATICABLE DE SCÈNE",
           "name": "2m x 1m",
           "specs": [
             "Anti-dérapants",
@@ -738,12 +869,18 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/cf693d8e2203936d.webp"
+          "image": "assets/secondary/cf693d8e2203936d.webp",
+          "id": "effets-video-1f040a08cb",
+          "use": "Composer un podium ou une scène avec des modules de 2 × 1 m.",
+          "need": "scene",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         }
       ],
       "conditions": [
         {
-          "title": "Disponibilite",
+          "title": "Disponibilité",
           "text": "Pour toute demande de location, contactez-nous via le formulaire pour valider la disponibilité."
         },
         {
@@ -755,7 +892,7 @@
           "text": "Nous pouvons livrer ou installer le matériel dans le lieu de votre choix, tarifs selon distance"
         },
         {
-          "title": "Tarif degressif",
+          "title": "Tarif dégressif",
           "text": "En cas de location longue durée, une dégressivité sera appliquée au forfait jour. Week-end du samedi au lundi = 1 jour."
         },
         {
@@ -1023,8 +1160,8 @@
       "title": "Pack Son + Lights",
       "group": "Location de matériel",
       "source": "https://www.fix-events.fr/pack-son-lights/",
-      "hero_image": "assets/secondary/1dd95011d3edd899.webp",
-      "subtitle": "Pour tout renseignement ou demande de location, contactez-nous",
+      "hero_image": "assets/video-poster.jpeg",
+      "subtitle": "Des ensembles son, lumière et vidéo pour vous aider à composer votre événement.",
       "intro": [],
       "sections": [],
       "photos": [],
@@ -1041,7 +1178,11 @@
           "description": "Matériel simple, compatible ordinateur ou téléphone, rapide à installer, autonome sur la musique.",
           "price": "125€ TTC / JOUR",
           "amount": 125,
-          "image": "assets/secondary/5e91755a4e47354e.webp"
+          "image": "assets/secondary/5e91755a4e47354e.webp",
+          "id": "pack-son-lights-9b4be46ae4",
+          "use": "Un ensemble son et lumière présenté pour une soirée de 60 personnes.",
+          "need": "danse",
+          "badges": []
         },
         {
           "type": "SOIREE DJ 100P",
@@ -1055,7 +1196,11 @@
           "description": "Câbles et pieds fournis selon votre configuration Matériel professionel pour DJ/Musicien, éclairages autonome sur la musique, idéal mariage.",
           "price": "250€ TTC / JOUR",
           "amount": 250,
-          "image": "assets/secondary/fc1894407442576b.webp"
+          "image": "assets/secondary/fc1894407442576b.webp",
+          "id": "pack-son-lights-ecb5d2ad41",
+          "use": "Un ensemble son, lumière et régie présenté pour une soirée DJ de 100 personnes.",
+          "need": "danse",
+          "badges": []
         },
         {
           "type": "DISCOURS EXTERIEUR 100P",
@@ -1068,7 +1213,13 @@
           "description": "Sonorisation Autonome sur Batterie, Discours ou Musique via bluetooth, idéal cérémonie laïque",
           "price": "200€ TTC / JOUR",
           "amount": 200,
-          "image": "assets/secondary/2c1cf003bfff56fe.webp"
+          "image": "assets/secondary/2c1cf003bfff56fe.webp",
+          "id": "pack-son-lights-330f4590ad",
+          "use": "Un ensemble sur batterie présenté pour des discours en extérieur, jusqu’à 100 personnes.",
+          "need": "exterieur",
+          "badges": [
+            "Sur batterie"
+          ]
         },
         {
           "type": "PACK KARAOKE 50P",
@@ -1081,12 +1232,16 @@
           "description": "Le système tout en 1 pour brancher votre tablette ou téléphone en bluetooth et chanter toute la soirée !",
           "price": "200€ TTC / JOUR",
           "amount": 200,
-          "image": "assets/secondary/2b57495dfc93f008.webp"
+          "image": "assets/secondary/2b57495dfc93f008.webp",
+          "id": "pack-son-lights-a2d84dc4bf",
+          "use": "Un ensemble son, micros et projection présenté pour un karaoké de 50 personnes.",
+          "need": "musique",
+          "badges": []
         }
       ],
       "conditions": [
         {
-          "title": "Disponibilite",
+          "title": "Disponibilité",
           "text": "Pour toute demande de location, contactez-nous via le formulaire pour valider la disponibilité."
         },
         {
@@ -1098,7 +1253,7 @@
           "text": "Nous pouvons livrer ou installer le matériel dans le lieu de votre choix, tarifs selon distance"
         },
         {
-          "title": "Tarif degressif",
+          "title": "Tarif dégressif",
           "text": "En cas de location longue durée, une dégressivité sera appliquée au forfait jour. Week-end du samedi au lundi = 1 jour."
         },
         {
@@ -1384,8 +1539,8 @@
       "title": "Sonorisation",
       "group": "Location de matériel",
       "source": "https://www.fix-events.fr/sonorisation/",
-      "hero_image": "assets/secondary/1dd95011d3edd899.webp",
-      "subtitle": "Pour tout renseignement ou demande de location, contactez-nous",
+      "hero_image": "assets/quality.jpeg",
+      "subtitle": "Enceintes, micros et régies : choisissez le son adapté à votre événement.",
       "intro": [],
       "sections": [],
       "photos": [],
@@ -1402,7 +1557,13 @@
           "description": "",
           "price": "70€ TTC / JOUR",
           "amount": 70,
-          "image": "assets/secondary/acbcf2e3a0e77164.webp"
+          "image": "assets/secondary/acbcf2e3a0e77164.webp",
+          "id": "sonorisation-9be5f1a040",
+          "use": "Musique et voix pour une réception ou une soirée.",
+          "need": "musique",
+          "badges": [
+            "Bluetooth"
+          ]
         },
         {
           "type": "ENCEINTE COLONNE",
@@ -1415,7 +1576,13 @@
           "description": "",
           "price": "90€ TTC / JOUR",
           "amount": 90,
-          "image": "assets/secondary/13b54e8019d3dc2c.webp"
+          "image": "assets/secondary/13b54e8019d3dc2c.webp",
+          "id": "sonorisation-cb43715e1d",
+          "use": "Musique et voix pour une réception ou une soirée.",
+          "need": "musique",
+          "badges": [
+            "Bluetooth"
+          ]
         },
         {
           "type": "ENCEINTE / RETOUR",
@@ -1428,7 +1595,13 @@
           "description": "",
           "price": "70€ TTC / JOUR",
           "amount": 70,
-          "image": "assets/secondary/fdd06fe8bf3a4fef.webp"
+          "image": "assets/secondary/fdd06fe8bf3a4fef.webp",
+          "id": "sonorisation-7e6a648448",
+          "use": "Diffuser la musique ou assurer un retour de scène.",
+          "need": "musique",
+          "badges": [
+            "Bluetooth"
+          ]
         },
         {
           "type": "ENCEINTE PORTATIVE",
@@ -1441,7 +1614,14 @@
           "description": "",
           "price": "50€ TTC / JOUR",
           "amount": 50,
-          "image": "assets/secondary/8240d7c97933e5c8.webp"
+          "image": "assets/secondary/8240d7c97933e5c8.webp",
+          "id": "sonorisation-5d493376a2",
+          "use": "Sonoriser un petit espace avec une enceinte sur batterie.",
+          "need": "autonomie",
+          "badges": [
+            "Sur batterie",
+            "Bluetooth"
+          ]
         },
         {
           "type": "ENCEINTE EXTERIEUR",
@@ -1455,7 +1635,15 @@
           "description": "",
           "price": "70€ TTC / JOUR",
           "amount": 70,
-          "image": "assets/secondary/4fe3e4a19be2f679.webp"
+          "image": "assets/secondary/4fe3e4a19be2f679.webp",
+          "id": "sonorisation-03b6c51fdd",
+          "use": "Diffuser voix et musique en extérieur, sur batterie.",
+          "need": "exterieur",
+          "badges": [
+            "Sur batterie",
+            "Bluetooth",
+            "Usage extérieur"
+          ]
         },
         {
           "type": "ENCEINTE EXTERIEUR",
@@ -1469,7 +1657,15 @@
           "description": "",
           "price": "90€ TTC / JOUR",
           "amount": 90,
-          "image": "assets/secondary/8b402d6e202aaaf1.webp"
+          "image": "assets/secondary/8b402d6e202aaaf1.webp",
+          "id": "sonorisation-41610202d4",
+          "use": "Diffuser voix et musique en extérieur, sur batterie.",
+          "need": "exterieur",
+          "badges": [
+            "Sur batterie",
+            "Bluetooth",
+            "Usage extérieur"
+          ]
         },
         {
           "type": "CONTROLEUR DJ PRO",
@@ -1482,10 +1678,14 @@
           "description": "",
           "price": "70€ TTC / JOUR",
           "amount": 70,
-          "image": "assets/secondary/2fb782d09d49b221.webp"
+          "image": "assets/secondary/2fb782d09d49b221.webp",
+          "id": "sonorisation-585c09e995",
+          "use": "Mixer lors d’une soirée avec une régie DJ professionnelle.",
+          "need": "musique",
+          "badges": []
         },
         {
-          "type": "REGIE DJ PORTABLE",
+          "type": "RÉGIE DJ PORTABLE",
           "name": "Contrôleur Pioneer DDJ FLX4",
           "specs": [
             "Rekordbox, Serato, etc…",
@@ -1495,7 +1695,11 @@
           "description": "",
           "price": "25€ TTC / JOUR",
           "amount": 25,
-          "image": "assets/secondary/e1c5b2bd54450544.webp"
+          "image": "assets/secondary/e1c5b2bd54450544.webp",
+          "id": "sonorisation-31729216f5",
+          "use": "Une régie compacte pour mixer en déplacement.",
+          "need": "musique",
+          "badges": []
         },
         {
           "type": "TABLE DE MIXAGE",
@@ -1509,7 +1713,13 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/65a729aa46774e53.webp"
+          "image": "assets/secondary/65a729aa46774e53.webp",
+          "id": "sonorisation-3ff7a7424c",
+          "use": "Régler ensemble plusieurs micros et sources musicales.",
+          "need": "discours",
+          "badges": [
+            "Bluetooth"
+          ]
         },
         {
           "type": "TABLE DE MIXAGE",
@@ -1524,7 +1734,13 @@
           "description": "",
           "price": "25€ TTC / JOUR",
           "amount": 25,
-          "image": "assets/secondary/6fdf670dfdecc8e4.webp"
+          "image": "assets/secondary/6fdf670dfdecc8e4.webp",
+          "id": "sonorisation-4167e0c0ac",
+          "use": "Régler ensemble plusieurs micros et sources musicales.",
+          "need": "discours",
+          "badges": [
+            "Bluetooth"
+          ]
         },
         {
           "type": "CONSOLE NUMERIQUE",
@@ -1538,7 +1754,11 @@
           "description": "",
           "price": "190€ TTC / JOUR",
           "amount": 190,
-          "image": "assets/secondary/e69b85567d708f48.webp"
+          "image": "assets/secondary/e69b85567d708f48.webp",
+          "id": "sonorisation-b37300fb0b",
+          "use": "Piloter les sources audio d’un concert ou d’un événement.",
+          "need": "regie",
+          "badges": []
         },
         {
           "type": "BOITIER DE SCENE",
@@ -1551,7 +1771,11 @@
           "description": "",
           "price": "70€ TTC / JOUR",
           "amount": 70,
-          "image": "assets/secondary/2052a84b37437865.webp"
+          "image": "assets/secondary/2052a84b37437865.webp",
+          "id": "sonorisation-38091b2afb",
+          "use": "Relier les micros de scène à une console compatible.",
+          "need": "regie",
+          "badges": []
         },
         {
           "type": "MICRO VOIX CHANT",
@@ -1563,7 +1787,11 @@
           "description": "",
           "price": "10€ TTC / JOUR",
           "amount": 10,
-          "image": "assets/secondary/6cb470ac7b77fad3.webp"
+          "image": "assets/secondary/6cb470ac7b77fad3.webp",
+          "id": "sonorisation-2f0036bd61",
+          "use": "Amplifier un discours ou une voix chantée.",
+          "need": "discours",
+          "badges": []
         },
         {
           "type": "MICRO SANS FIL",
@@ -1576,7 +1804,13 @@
           "description": "",
           "price": "25€ TTC / JOUR",
           "amount": 25,
-          "image": "assets/secondary/becc094190f5fa1d.webp"
+          "image": "assets/secondary/becc094190f5fa1d.webp",
+          "id": "sonorisation-fec746560d",
+          "use": "Prendre la parole sans rester près de la régie.",
+          "need": "discours",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
           "type": "PUPITRE PLEXI",
@@ -1588,7 +1822,13 @@
           "description": "",
           "price": "50€ TTC / JOUR",
           "amount": 50,
-          "image": "assets/secondary/9060ede0a2254464.webp"
+          "image": "assets/secondary/9060ede0a2254464.webp",
+          "id": "sonorisation-87e80d02af",
+          "use": "Installer un intervenant pour un discours ou une conférence.",
+          "need": "discours",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
           "type": "MICRO INSTRUMENT",
@@ -1600,10 +1840,14 @@
           "description": "",
           "price": "10€ TTC / JOUR",
           "amount": 10,
-          "image": "assets/secondary/843704b04a9fc6ae.webp"
+          "image": "assets/secondary/843704b04a9fc6ae.webp",
+          "id": "sonorisation-db016ae5ce",
+          "use": "Reprendre le son d’un instrument sur scène.",
+          "need": "musique",
+          "badges": []
         },
         {
-          "type": "Station energie",
+          "type": "STATION D’ÉNERGIE",
           "name": "AllPowers R1500",
           "specs": [
             "Batterie 1152Wh",
@@ -1614,10 +1858,14 @@
           "description": "",
           "price": "80€ TTC / JOUR",
           "amount": 80,
-          "image": "assets/secondary/2709ebd3423952d0.webp"
+          "image": "assets/secondary/2709ebd3423952d0.webp",
+          "id": "sonorisation-3b9452ecf0",
+          "use": "Alimenter des équipements sans prise secteur, selon leur consommation.",
+          "need": "autonomie",
+          "badges": []
         },
         {
-          "type": "Station energie",
+          "type": "STATION D’ÉNERGIE",
           "name": "Ecoflow 300",
           "specs": [
             "Batterie 288Wh",
@@ -1628,12 +1876,16 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/9628d39c874235fc.webp"
+          "image": "assets/secondary/9628d39c874235fc.webp",
+          "id": "sonorisation-90b4e7e204",
+          "use": "Alimenter des équipements sans prise secteur, selon leur consommation.",
+          "need": "autonomie",
+          "badges": []
         }
       ],
       "conditions": [
         {
-          "title": "Disponibilite",
+          "title": "Disponibilité",
           "text": "Pour toute demande de location, contactez-nous via le formulaire pour valider la disponibilité."
         },
         {
@@ -1645,7 +1897,7 @@
           "text": "Nous pouvons livrer ou installer le matériel dans le lieu de votre choix, tarifs selon distance"
         },
         {
-          "title": "Tarif degressif",
+          "title": "Tarif dégressif",
           "text": "En cas de location longue durée, une dégressivité sera appliquée au forfait jour. Week-end du samedi au lundi = 1 jour."
         },
         {
@@ -1702,15 +1954,15 @@
       "title": "Structures & levage",
       "group": "Location de matériel",
       "source": "https://www.fix-events.fr/structures/",
-      "hero_image": "assets/secondary/1dd95011d3edd899.webp",
-      "subtitle": "Pour tout renseignement ou demande de location, contactez-nous",
+      "hero_image": "assets/secondary/a7d544f066507679.webp",
+      "subtitle": "Praticables, structures et levage pour composer votre installation.",
       "intro": [],
       "sections": [],
       "photos": [],
       "kind": "catalogue",
       "products": [
         {
-          "type": "STRUCTURE CARREE",
+          "type": "STRUCTURE CARRÉE",
           "name": "ASD Alu 290",
           "specs": [
             "Taille : 1M / 2M / 3M",
@@ -1720,7 +1972,11 @@
           "description": "",
           "price": "à partir de 10€ TTC / JOUR",
           "amount": 10,
-          "image": "assets/secondary/adf94ab582a1a3f6.webp"
+          "image": "assets/secondary/adf94ab582a1a3f6.webp",
+          "id": "structures-cf6f6f035e",
+          "use": "Composer une structure de support adaptée à l’installation.",
+          "need": "scene",
+          "badges": []
         },
         {
           "type": "PIEDS DE LEVAGE",
@@ -1733,10 +1989,14 @@
           "description": "",
           "price": "85€ TTC / JOUR",
           "amount": 85,
-          "image": "assets/secondary/b328debb31f83a16.webp"
+          "image": "assets/secondary/b328debb31f83a16.webp",
+          "id": "structures-d962cc43f3",
+          "use": "Lever une structure avec un équipement de montage professionnel.",
+          "need": "scene",
+          "badges": []
         },
         {
-          "type": "ESCALIER SCENE",
+          "type": "ESCALIER DE SCÈNE",
           "name": "2 marches",
           "specs": [
             "Alu / Métal / Antidérapant",
@@ -1746,10 +2006,16 @@
           "description": "",
           "price": "15€ TTC / JOUR",
           "amount": 15,
-          "image": "assets/secondary/68673138a6b63b2d.webp"
+          "image": "assets/secondary/68673138a6b63b2d.webp",
+          "id": "structures-526640e767",
+          "use": "Faciliter l’accès à un podium compatible.",
+          "need": "scene",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         },
         {
-          "type": "PRATICABLE DE SCENE",
+          "type": "PRATICABLE DE SCÈNE",
           "name": "2m x 1m",
           "specs": [
             "Anti-dérapants",
@@ -1759,12 +2025,18 @@
           "description": "",
           "price": "30€ TTC / JOUR",
           "amount": 30,
-          "image": "assets/secondary/cf693d8e2203936d.webp"
+          "image": "assets/secondary/cf693d8e2203936d.webp",
+          "id": "structures-1f040a08cb",
+          "use": "Composer un podium ou une scène avec des modules de 2 × 1 m.",
+          "need": "scene",
+          "badges": [
+            "Éléments inclus : voir détails"
+          ]
         }
       ],
       "conditions": [
         {
-          "title": "Disponibilite",
+          "title": "Disponibilité",
           "text": "Pour toute demande de location, contactez-nous via le formulaire pour valider la disponibilité."
         },
         {
@@ -1776,7 +2048,7 @@
           "text": "Nous pouvons livrer ou installer le matériel dans le lieu de votre choix, tarifs selon distance"
         },
         {
-          "title": "Tarif degressif",
+          "title": "Tarif dégressif",
           "text": "En cas de location longue durée, une dégressivité sera appliquée au forfait jour. Week-end du samedi au lundi = 1 jour."
         },
         {
@@ -1784,6 +2056,74 @@
           "text": "Nous vous ferons une démonstration et une explication du fonctionnement des matériels lors du retrait."
         }
       ]
+    },
+    {
+      "slug": "sonorisation-evenementielle",
+      "title": "Sonorisation événementielle",
+      "group": "Savoir faire",
+      "source": "https://www.fix-events.fr/regie-son-lumiere/",
+      "hero_image": "assets/secondary/fe40163eb4e59df2.webp",
+      "subtitle": "Une voix claire, une musique adaptée et une installation pensée pour votre lieu.",
+      "intro": [],
+      "sections": [
+        {
+          "title": "Une prestation pensée pour votre événement",
+          "cards": [
+            {
+              "title": "Discours et cérémonies",
+              "text": "Une sonorisation adaptée pour rendre les prises de parole audibles dans votre espace.",
+              "icon": null
+            },
+            {
+              "title": "Musique et soirée",
+              "text": "Des équipements audio et une régie pour accompagner vos moments musicaux.",
+              "icon": null
+            },
+            {
+              "title": "Intérieur ou extérieur",
+              "text": "L’installation est étudiée selon le lieu, les contraintes techniques et les accès électriques.",
+              "icon": null
+            }
+          ],
+          "paragraphs": []
+        }
+      ],
+      "photos": [],
+      "kind": "service"
+    },
+    {
+      "slug": "eclairage-evenementiel",
+      "title": "Éclairage événementiel",
+      "group": "Savoir faire",
+      "source": "https://www.fix-events.fr/regie-son-lumiere/",
+      "hero_image": "assets/flexibility.jpeg",
+      "subtitle": "Une mise en lumière adaptée à votre ambiance, de la réception à la piste de danse.",
+      "intro": [],
+      "sections": [
+        {
+          "title": "Une prestation pensée pour votre événement",
+          "cards": [
+            {
+              "title": "Ambiance de réception",
+              "text": "Des couleurs et une lumière choisies pour mettre en valeur votre salle et son architecture.",
+              "icon": null
+            },
+            {
+              "title": "Piste de danse",
+              "text": "Des jeux de lumière adaptés à votre soirée et à ses moments forts.",
+              "icon": null
+            },
+            {
+              "title": "Une installation adaptée",
+              "text": "Les équipements sont sélectionnés en fonction de votre lieu, de l’espace et des contraintes techniques.",
+              "icon": null
+            }
+          ],
+          "paragraphs": []
+        }
+      ],
+      "photos": [],
+      "kind": "service"
     }
   ],
   "asset_sources": {
@@ -1915,5 +2255,36 @@
     "assets/secondary/adf94ab582a1a3f6.webp": "https://www.fix-events.fr/wp-content/uploads/2026/07/Capture-decran-2026-07-07-a-15.15.42.png",
     "assets/secondary/b328debb31f83a16.webp": "https://www.fix-events.fr/wp-content/uploads/2026/07/Capture-decran-2026-07-07-a-15.21.57.png",
     "assets/secondary/68673138a6b63b2d.webp": "https://www.fix-events.fr/wp-content/uploads/2026/07/Capture-decran-2026-07-07-a-15.26.06.png"
-  }
+  },
+  "needs": {
+    "ambiance": "Ambiance & décoration",
+    "danse": "Piste de danse",
+    "discours": "Discours & conférences",
+    "musique": "Musique & DJ",
+    "exterieur": "Événement extérieur",
+    "autonomie": "Alimentation & autonomie",
+    "video": "Projection & vidéo",
+    "effets": "Effets scéniques",
+    "scene": "Scène & podium",
+    "regie": "Régie & commande"
+  },
+  "reviews": [],
+  "workflow": [
+    {
+      "title": "Votre projet",
+      "text": "Parlez-nous de votre date, de votre lieu et de vos besoins."
+    },
+    {
+      "title": "Une proposition adaptée",
+      "text": "Nous échangeons sur les prestations ou le matériel, les tarifs et la disponibilité."
+    },
+    {
+      "title": "La préparation",
+      "text": "Nous précisons ensemble les accès, l’installation et les contraintes du lieu."
+    },
+    {
+      "title": "Le jour de l’événement",
+      "text": "L’intervention se déroule selon les prestations convenues dans votre devis."
+    }
+  ]
 }

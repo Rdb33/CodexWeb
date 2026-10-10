@@ -1,0 +1,26 @@
+<div class="interaction-status visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+<button class="selection-float button" type="button" data-open-selection hidden>Ma sélection <span class="selection-count">0</span></button>
+<div class="mobile-dock" hidden>
+  <a class="dock-call" href="tel:0664728321" aria-label="Appeler Fix-Events"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 4 1 1 5-2 2a15 15 0 0 0 6 6l2-2 5 1 1 4c-9 3-20-8-17-17Z"/></svg><span>Appeler</span></a>
+  <button class="button dock-selection" type="button" data-open-selection hidden>Ma sélection <span class="selection-count">0</span></button>
+  <a class="button dock-quote" href="nous-contacter-faq.html#contact">Demander un devis</a>
+</div>
+<dialog class="selection-dialog" aria-labelledby="selection-title">
+  <button class="dialog-close" type="button" aria-label="Fermer la sélection">×</button>
+  <p class="section-kicker">Votre projet commence ici</p>
+  <h2 id="selection-title">Ma sélection de matériel</h2>
+  <p class="selection-lead">Ajustez vos quantités avant de préparer votre demande. La disponibilité sera confirmée avec vous.</p>
+  <div class="selection-empty"><p>Votre sélection est encore vide.</p><a class="button button-secondary" href="materiel.html">Découvrir le matériel</a></div>
+  <ul class="selection-items" aria-label="Matériel sélectionné"></ul>
+  <div class="selection-summary" hidden>
+    <div class="selection-total"><span>Base indicative pour une journée</span><strong class="selection-amount"></strong></div>
+    <p>Montant TTC, hors transport et installation. La durée de location, les accessoires et les conditions peuvent modifier le tarif final.</p>
+    <div class="selection-actions"><a class="button" href="nous-contacter-faq.html?type=location&amp;selection=1#contact">Préparer ma demande →</a><button type="button" class="text-link selection-continue">Continuer ma sélection</button></div>
+  </div>
+  <p class="selection-storage-note" hidden>Votre navigateur ne conserve pas la sélection entre les pages. Gardez cet onglet ouvert et utilisez « Préparer ma demande ».</p>
+</dialog>
+<dialog class="product-photo-dialog" aria-label="Photo du matériel agrandie">
+  <button class="dialog-close" type="button" aria-label="Fermer la photo">×</button>
+  <img src="assets/logo-icon.png" alt="">
+  <p></p>
+</dialog>
