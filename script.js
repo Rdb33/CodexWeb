@@ -3,14 +3,31 @@ const header = document.querySelector('.site-header');
 const navigation = document.querySelector('#navigation');
 const menuToggle = document.querySelector('.menu-toggle');
 const dropdowns = [...document.querySelectorAll('.dropdown')];
+const backToTop = document.querySelector('.back-to-top');
 function closeMenu() {
   navigation.classList.remove('is-open');
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
   dropdowns.forEach(menu => { menu.open = false; });
 }
-function updateHeader() { header.classList.toggle('scrolled', window.scrollY > 35); }
-window.addEventListener('scroll', updateHeader, { passive: true });
+function updateHeader() {
+  header.classList.toggle('scrolled', window.scrollY > 35);
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = height > 0 ? Math.min(1, Math.max(0, window.scrollY / height)) : 0;
+  document.documentElement.style.setProperty('--scroll-progress', progress);
+  const showBackToTop = window.scrollY > 600;
+  backToTop.classList.toggle('is-visible', showBackToTop);
+  backToTop.tabIndex = showBackToTop ? 0 : -1;
+}
+let scrollFrame = null;
+window.addEventListener('scroll', () => {
+  if (scrollFrame !== null) return;
+  scrollFrame = requestAnimationFrame(() => {
+    updateHeader();
+    scrollFrame = null;
+  });
+}, { passive: true });
+window.addEventListener('resize', updateHeader, { passive: true });
 updateHeader();
 menuToggle.addEventListener('click', () => {
   const open = menuToggle.getAttribute('aria-expanded') !== 'true';
@@ -62,7 +79,7 @@ function moveGallery(direction) {
   let target = track.scrollLeft + direction * distance;
   if (target > end + 5) target = 0;
   if (target < -5) target = end;
-  track.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+  track.scrollTo({ left: Math.max(0, target), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 }
 document.querySelector('.gallery-prev').addEventListener('click', () => moveGallery(-1));
 document.querySelector('.gallery-next').addEventListener('click', () => moveGallery(1));
@@ -124,3 +141,39 @@ contactDialog.querySelector('.copy-request').addEventListener('click', async () 
     copyStatus.textContent = 'Sélectionnez puis copiez votre demande pour la transmettre.';
   }
 });
+
+// Content stays visible when scripts are blocked in an HTML preview. Animate
+// each section once as it enters the viewport, without retaining transforms
+// that would interfere with card hover or keyboard focus.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const activeReveals = new Set();
+let revealObserver;
+function setupReveals() {
+  revealObserver?.disconnect();
+  activeReveals.forEach(animation => animation.cancel());
+  activeReveals.clear();
+  if (motionPreference.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  const selector = '.experience-strip > div, .section-kicker, .section-title, .large-title, .section-description, .expertise-card, .why-intro > p, .benefit-grid article, .team-member, .social-card, .contact-section form';
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const element = entry.target;
+      revealObserver.unobserve(element);
+      element.dataset.revealed = 'true';
+      const isCard = element.matches('.expertise-card, .team-member, .social-card, .benefit-grid article');
+      const siblings = [...element.parentElement.children];
+      const delay = isCard ? (siblings.indexOf(element) % 3) * 85 : 0;
+      const animation = element.animate([
+        { opacity: 0, transform: 'translateY(22px)' },
+        { opacity: 1, transform: 'translateY(0)' },
+      ], { duration: 650, delay, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'backwards' });
+      activeReveals.add(animation);
+      animation.onfinish = animation.oncancel = () => activeReveals.delete(animation);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+  document.querySelectorAll(selector).forEach(element => {
+    if (!element.dataset.revealed) revealObserver.observe(element);
+  });
+}
+motionPreference.addEventListener('change', setupReveals);
+setupReveals();

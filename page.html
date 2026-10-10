@@ -12,6 +12,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header">
     <a class="brand" href="#accueil" aria-label="Fix-Events — accueil"><img src="assets/logo-icon.png" alt="" width="55" height="57"></a>
@@ -53,14 +54,20 @@
   <main id="main">
     <section class="hero" id="accueil" aria-labelledby="hero-title">
       <div class="container hero-content">
+        <div class="hero-copy">
+        <p class="hero-eyebrow"><span aria-hidden="true"></span> Saint-Malo · Grand Ouest</p>
         <img class="hero-logo" src="assets/logo.png" alt="FIX-e" width="812" height="398">
         <h1 id="hero-title"><span>DJ .</span> <span>Sonorisation .</span> <span>Éclairage</span></h1>
         <p class="hero-tagline">Votre partenaire technique pour des<br class="desktop-break"> événements inoubliables !</p>
-        <a class="button hero-cta" href="#contact"><span aria-hidden="true">»</span> Nous contacter</a>
-        <a class="scroll-cue" href="#expertises" aria-label="Découvrir nos expertises"><span></span><span></span></a>
+        <div class="hero-actions">
+          <a class="button hero-cta" href="#contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg> Parlons de votre événement</a>
+          <a class="text-link" href="#expertises">Nos expertises <span aria-hidden="true">↓</span></a>
+        </div>
         <p class="hero-intro">Basés à Saint Malo et fondés en 2024 par Cyril, DJ et passionné de<br class="desktop-break"> techniques évènementielles depuis plus de 20 ans.<br>Nous mettons notre expérience à votre service dans tout le Grand Ouest.</p>
+        </div>
         <div class="video-feature">
           <button class="video-cover" aria-label="Lire le film de présentation de Fix-Events"><span class="play-icon" aria-hidden="true"></span></button>
+          <div class="video-caption"><span>Des moments qui restent.</span><p>Découvrez l’expérience Fix-Events <span aria-hidden="true">↗</span></p></div>
           <video controls playsinline preload="none" poster="assets/video-poster.jpeg" aria-label="Film de présentation Fix-Events">
             <source src="assets/presentation.mp4" type="video/mp4">
             Votre navigateur ne prend pas en charge cette vidéo.
@@ -71,8 +78,16 @@
       <svg class="hero-curve" viewBox="0 0 1280 140" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0s286.54 140 640 139S1280 0 1280 0v140H0z"/></svg>
     </section>
 
+    <div class="experience-strip container" aria-label="Fix-Events en quelques mots">
+      <div><strong>20+</strong><span>années d’expérience</span></div>
+      <div><strong>3 expertises</strong><span>Son, musique &amp; lumière</span></div>
+      <div><strong>Grand Ouest</strong><span>Basés à Saint-Malo</span></div>
+    </div>
+
     <section class="expertise-section container" id="expertises" aria-labelledby="expertises-title">
+      <p class="section-kicker">Notre savoir-faire</p>
       <h2 class="section-title" id="expertises-title">Nos expertises</h2>
+      <p class="section-description">Le bon son. La bonne ambiance. La lumière qui change tout.</p>
       <div class="expertise-grid">
         <a class="expertise-card" href="https://www.fix-events.fr/sonorisation/">
           <img src="assets/speaker.png" alt="" width="32" height="42">
@@ -104,6 +119,7 @@
     </section>
 
     <section class="why-section wide-container" id="pourquoi" aria-labelledby="why-title">
+      <p class="section-kicker">La différence Fix-Events</p>
       <div class="why-intro"><h2 class="section-title" id="why-title">Pourquoi choisir<br>Fix-Events ?</h2><p>Que vous organisiez un mariage, un gala, une conférence, ou une fête privée, Fix-Events s’engage à faire de votre événement une expérience mémorable, portée par des solutions techniques sur mesure et une exécution parfaite.</p></div>
       <div class="benefit-grid">
         <article><img src="assets/quality.jpeg" alt="Installation DJ et éclairage coloré dans une salle en pierre" loading="lazy" width="750" height="1000"><h3>Matériel haut de gamme</h3><p>Nous utilisons des équipements récents de marques reconnues pour garantir une qualité &amp; une fiabilité irréprochable.</p></article>
@@ -119,6 +135,7 @@
     </section>
 
     <section class="team-section wide-container" id="equipe" aria-labelledby="team-title">
+      <p class="section-kicker">Les visages de vos événements</p>
       <h2 class="section-title" id="team-title">Équipe DJ</h2>
       <div class="team-grid">
         <article class="team-member"><img src="assets/cyril.jpg" alt="Cyril DB derrière ses platines" loading="lazy" width="800" height="800"><p class="role">DJ &amp; Régisseur</p><h3>Cyril DB</h3><p class="member-links"><a href="https://www.instagram.com/fix_e_fix_events/" target="_blank" rel="noopener noreferrer">Instagram</a> | <a href="https://www.linkedin.com/in/cyril-de-bernis-56691415/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://soundcloud.com/cyril-de-bernis" target="_blank" rel="noopener noreferrer">SoundCloud</a></p></article>
@@ -134,6 +151,7 @@
     </section>
 
     <section class="social-section" aria-labelledby="social-title"><div class="wide-container">
+      <p class="section-kicker">Dans les coulisses</p>
       <h2 class="large-title" id="social-title">Nos réseaux</h2>
       <div class="social-grid">
         <article class="social-card youtube"><h3>YouTube</h3><a class="button" href="https://www.youtube.com/@FIX-e" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">»</span> Découvrir</a></article>
@@ -143,6 +161,7 @@
     </div></section>
 
     <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+      <p class="section-kicker">Votre prochain événement commence ici</p>
       <h2 class="large-title" id="contact-title">Contactez-nous</h2>
       <form id="contact-form">
         <div class="form-grid">
@@ -161,6 +180,7 @@
     <div class="footer-socials"><a href="https://www.facebook.com/profile.php?id=61555743389997" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a href="https://www.instagram.com/fix_e_fix_events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a><a href="https://www.youtube.com/@FIX-e" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a></div>
     <p>Réalisation par l’agence web E-ssentiel</p>
   </footer>
+  <a class="back-to-top" href="#accueil" aria-label="Retour en haut de la page" tabindex="-1"><span aria-hidden="true">↑</span></a>
   <dialog class="lightbox" aria-label="Photo de l’événement agrandie"><button class="dialog-close" aria-label="Fermer la photo">×</button><img src="assets/event-1.jpeg" alt=""><div class="lightbox-controls"><button aria-label="Photo précédente" class="lightbox-prev">‹</button><button aria-label="Photo suivante" class="lightbox-next">›</button></div></dialog>
   <dialog class="contact-dialog" aria-labelledby="request-title"><button class="dialog-close" aria-label="Fermer">×</button><h2 id="request-title">Votre demande</h2><p>Copiez votre demande, puis collez-la dans le formulaire du site Fix-Events pour finaliser l’envoi.</p><pre class="request-summary"></pre><div class="request-actions"><button class="button copy-request" type="button">Copier ma demande</button><a class="button" href="https://www.fix-events.fr/nous-contacter-faq/" target="_blank" rel="noopener noreferrer">Ouvrir le formulaire ↗</a></div><p class="copy-status" role="status"></p><p>Vous préférez nous appeler ? <a href="tel:0664728321">06.64.72.83.21</a></p></dialog>
 </body>
