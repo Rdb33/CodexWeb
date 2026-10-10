@@ -50,63 +50,69 @@ document.addEventListener('keydown', event => {
 window.matchMedia('(min-width: 981px)').addEventListener('change', closeMenu);
 
 const videoFeature = document.querySelector('.video-feature');
-const video = videoFeature.querySelector('video');
-videoFeature.querySelector('.video-cover').addEventListener('click', async () => {
-  videoFeature.classList.add('playing');
-  video.focus();
-  // Prefer the retained video when the full site is served; an isolated HTML
-  // preview falls back to the reference site's video.
-  if (/^https?:$/.test(location.protocol)) {
-    const localSource = new URL('assets/presentation.mp4', location.href);
-    try {
-      const response = await fetch(localSource, { method: 'HEAD', signal: AbortSignal.timeout(2500) });
-      if (response.ok && response.headers.get('content-type')?.includes('video/mp4')) {
-        video.src = localSource.href;
-      }
-    } catch { /* The standalone preview can still use the remote source. */ }
-  }
-  video.play().catch(() => { /* Native controls remain available if autoplay is refused. */ });
-});
-video.querySelector('source').addEventListener('error', () => {
-  videoFeature.querySelector('.video-error').hidden = false;
-});
+if (videoFeature) {
+  const video = videoFeature.querySelector('video');
+  videoFeature.querySelector('.video-cover').addEventListener('click', async () => {
+    videoFeature.classList.add('playing');
+    video.focus();
+    // Prefer the retained video when the full site is served; an isolated HTML
+    // preview falls back to the reference site's video.
+    if (/^https?:$/.test(location.protocol)) {
+      const localSource = new URL('assets/presentation.mp4', location.href);
+      try {
+        const response = await fetch(localSource, { method: 'HEAD', signal: AbortSignal.timeout(2500) });
+        if (response.ok && response.headers.get('content-type')?.includes('video/mp4')) {
+          video.src = localSource.href;
+        }
+      } catch { /* The standalone preview can still use the remote source. */ }
+    }
+    video.play().catch(() => { /* Native controls remain available if autoplay is refused. */ });
+  });
+  video.querySelector('source').addEventListener('error', () => {
+    videoFeature.querySelector('.video-error').hidden = false;
+  });
 
-const track = document.querySelector('.gallery-track');
-const slides = [...track.querySelectorAll('.gallery-slide')];
-function moveGallery(direction) {
-  const distance = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
-  const end = track.scrollWidth - track.clientWidth;
-  let target = track.scrollLeft + direction * distance;
-  if (target > end + 5) target = 0;
-  if (target < -5) target = end;
-  track.scrollTo({ left: Math.max(0, target), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 }
-document.querySelector('.gallery-prev').addEventListener('click', () => moveGallery(-1));
-document.querySelector('.gallery-next').addEventListener('click', () => moveGallery(1));
 
-const lightbox = document.querySelector('.lightbox');
-let photoIndex = 0;
-function updatePhoto() {
-  const source = slides[photoIndex];
-  lightbox.querySelector('img').src = source.dataset.image;
-  lightbox.querySelector('img').alt = source.querySelector('img').alt;
-}
 function openDialog(dialog) { dialog.showModal(); document.body.classList.add('modal-open'); }
-slides.forEach((slide, index) => slide.addEventListener('click', () => {
-  photoIndex = index;
-  updatePhoto();
-  openDialog(lightbox);
-}));
-function movePhoto(direction) {
-  photoIndex = (photoIndex + direction + slides.length) % slides.length;
-  updatePhoto();
+const track = document.querySelector('.gallery-track');
+const lightbox = document.querySelector('.lightbox');
+if (track && lightbox) {
+  const slides = [...track.querySelectorAll('.gallery-slide')];
+  function moveGallery(direction) {
+    const distance = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
+    const end = track.scrollWidth - track.clientWidth;
+    let target = track.scrollLeft + direction * distance;
+    if (target > end + 5) target = 0;
+    if (target < -5) target = end;
+    track.scrollTo({ left: Math.max(0, target), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  }
+  document.querySelector('.gallery-prev').addEventListener('click', () => moveGallery(-1));
+  document.querySelector('.gallery-next').addEventListener('click', () => moveGallery(1));
+
+  let photoIndex = 0;
+  function updatePhoto() {
+    const source = slides[photoIndex];
+    lightbox.querySelector('img').src = source.dataset.image;
+    lightbox.querySelector('img').alt = source.querySelector('img').alt;
+  }
+  slides.forEach((slide, index) => slide.addEventListener('click', () => {
+    photoIndex = index;
+    updatePhoto();
+    openDialog(lightbox);
+  }));
+  function movePhoto(direction) {
+    photoIndex = (photoIndex + direction + slides.length) % slides.length;
+    updatePhoto();
+  }
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', () => movePhoto(-1));
+  lightbox.querySelector('.lightbox-next').addEventListener('click', () => movePhoto(1));
+  lightbox.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') movePhoto(-1);
+    if (event.key === 'ArrowRight') movePhoto(1);
+  });
 }
-lightbox.querySelector('.lightbox-prev').addEventListener('click', () => movePhoto(-1));
-lightbox.querySelector('.lightbox-next').addEventListener('click', () => movePhoto(1));
-lightbox.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft') movePhoto(-1);
-  if (event.key === 'ArrowRight') movePhoto(1);
-});
+
 document.querySelectorAll('dialog').forEach(dialog => {
   dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
@@ -119,28 +125,36 @@ document.querySelectorAll('dialog').forEach(dialog => {
 });
 
 const contactDialog = document.querySelector('.contact-dialog');
-const summary = contactDialog.querySelector('.request-summary');
-const copyStatus = contactDialog.querySelector('.copy-status');
-document.querySelector('#contact-form').addEventListener('submit', event => {
-  event.preventDefault();
-  const data = new FormData(event.currentTarget);
-  summary.textContent = `${data.get('prenom').trim()} ${data.get('nom').trim()}\nTéléphone : ${data.get('tel').trim()}\nE-mail : ${data.get('email').trim()}\n\n${data.get('message').trim()}`;
-  copyStatus.textContent = '';
-  openDialog(contactDialog);
-});
-contactDialog.querySelector('.copy-request').addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(summary.textContent);
-    copyStatus.textContent = 'Votre demande a été copiée.';
-  } catch {
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(summary);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    copyStatus.textContent = 'Sélectionnez puis copiez votre demande pour la transmettre.';
+const contactForm = document.querySelector('#contact-form');
+if (contactDialog && contactForm) {
+  const summary = contactDialog.querySelector('.request-summary');
+  const copyStatus = contactDialog.querySelector('.copy-status');
+  contactForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    summary.textContent = `${data.get('prenom').trim()} ${data.get('nom').trim()}\nTéléphone : ${data.get('tel').trim()}\nE-mail : ${data.get('email').trim()}\n\n${data.get('message').trim()}`;
+    copyStatus.textContent = '';
+    openDialog(contactDialog);
+  });
+  contactDialog.querySelector('.copy-request').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(summary.textContent);
+      copyStatus.textContent = 'Votre demande a été copiée.';
+    } catch {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(summary);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      copyStatus.textContent = 'Sélectionnez puis copiez votre demande pour la transmettre.';
+    }
+  });
+
+  const equipment = new URLSearchParams(location.search).get('materiel');
+  if (equipment) {
+    contactForm.querySelector('[name="message"]').value = `Bonjour, je souhaite obtenir un devis pour : ${equipment.slice(0, 500)}.\nDate de l’événement : \nLieu : \nDurée de location : `;
   }
-});
+}
 
 // Content stays visible when scripts are blocked in an HTML preview. Animate
 // each section once as it enters the viewport, without retaining transforms
@@ -153,7 +167,7 @@ function setupReveals() {
   activeReveals.forEach(animation => animation.cancel());
   activeReveals.clear();
   if (motionPreference.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
-  const selector = '.experience-strip > div, .section-kicker, .section-title, .large-title, .section-description, .expertise-card, .why-intro > p, .benefit-grid article, .team-member, .social-card, .contact-section form';
+  const selector = '.experience-strip > div, .section-kicker, .section-title, .large-title, .section-description, .expertise-card, .why-intro > p, .benefit-grid article, .team-member, .social-card, .contact-section form, .product-card, .category-card, .service-feature, .rental-condition, .service-note';
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -177,3 +191,41 @@ function setupReveals() {
 }
 motionPreference.addEventListener('change', setupReveals);
 setupReveals();
+
+// Catalogue search, category filtering and price sorting work entirely locally.
+const catalog = document.querySelector('[data-catalog]');
+if (catalog) {
+  const cards = [...catalog.querySelectorAll('.product-card')];
+  const grid = catalog.querySelector('.product-grid');
+  const search = catalog.querySelector('[name="recherche"]');
+  const category = catalog.querySelector('[name="categorie"]');
+  const sort = catalog.querySelector('[name="tri"]');
+  const count = catalog.querySelector('.catalog-count');
+  const empty = catalog.querySelector('.catalog-empty');
+  const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const originalOrder = new Map(cards.map((card, index) => [card, index]));
+  function refreshCatalog() {
+    const query = normalize(search.value.trim());
+    let visible = 0;
+    cards.forEach(card => {
+      const matches = normalize(card.dataset.search).includes(query) && (!category.value || card.dataset.type === category.value);
+      card.hidden = !matches;
+      if (matches) visible++;
+    });
+    const order = [...cards].sort((a, b) => sort.value === 'prix-asc' ? Number(a.dataset.price) - Number(b.dataset.price) : sort.value === 'prix-desc' ? Number(b.dataset.price) - Number(a.dataset.price) : originalOrder.get(a) - originalOrder.get(b));
+    order.forEach(card => grid.append(card));
+    count.textContent = `${visible} référence${visible === 1 ? '' : 's'}`;
+    empty.hidden = visible > 0;
+  }
+  search.addEventListener('input', refreshCatalog);
+  category.addEventListener('change', refreshCatalog);
+  sort.addEventListener('change', refreshCatalog);
+  catalog.querySelector('.catalog-reset').addEventListener('click', () => {
+    search.value = '';
+    category.value = '';
+    sort.value = 'selection';
+    refreshCatalog();
+    search.focus();
+  });
+  refreshCatalog();
+}
