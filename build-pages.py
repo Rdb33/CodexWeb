@@ -199,8 +199,7 @@ for page in PAGES:
     if page['kind'] == 'catalogue':
         content = catalog(page) + project_cta(page) + related(page)
     elif page['kind'] == 'contact':
-        intro = '<div class="contact-options container"><a href="tel:0664728321"><span>Par téléphone</span><strong>06.64.72.83.21</strong></a><div><span>Notre secteur</span><strong>Saint-Malo &amp; Grand Ouest</strong></div></div>'
-        content = intro + CONTACT_FORM + faq(BY_SLUG['eclairages']['conditions'], 'Vos questions sur la location')
+        content = CONTACT_FORM + faq(BY_SLUG['eclairages']['conditions'], 'Vos questions sur la location')
     else:
         content, dialogs = service(page)
         content += project_cta(page) + related(page)

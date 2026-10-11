@@ -889,7 +889,6 @@ dialog[open] { animation-duration: .2s; }
   .product-image:hover img, .gallery-slide:hover img { transform: none !important; }
 }
 .gallery-slide { position: relative; }
-.gallery-caption { position: absolute; left: 0; bottom: 0; right: 0; padding: 42px 20px 20px; background: linear-gradient(transparent, #061006e6); text-align: left; color: #f5f7f1; font: 400 14px/1.5 var(--heading); pointer-events: none; }
 /* Keep pinned controls compact and the selection action visible. */
 .catalog-toolbar { display: grid; grid-template-columns: 1.15fr 2fr; column-gap: 18px; }
 .catalog-filter-panel { margin-top: 0; }
@@ -909,4 +908,55 @@ dialog[open] { animation-duration: .2s; }
   .selection-summary > p { margin-top: 10px; font-size: 12px; line-height: 1.6; }
   .selection-total { padding-top: 16px; gap: 8px; }
   .selection-actions { gap: 6px; margin-top: 18px; }
+}
+
+/* A shorter homepage and a phone-first contact journey. */
+.team-intro { display: grid; grid-template-columns: minmax(180px, 300px) 1fr; gap: 40px; align-items: center; margin-top: 36px; }
+.team-intro > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
+.team-intro h3 { font-size: 30px; margin: 10px 0 16px; }
+.team-intro p { max-width: 650px; color: var(--muted); }
+.team-intro .text-link { display: inline-block; margin-top: 20px; }
+.team-details, .request-preparation { border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px; margin-top: 28px; }
+.team-details > summary, .request-preparation > summary { min-height: 44px; padding: 10px 0; font-family: var(--heading); color: var(--green); }
+.social-compact { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-block: 28px; margin-top: 60px; border-block: 1px solid var(--border); }
+.social-compact p { color: var(--muted); }
+.social-compact > div { display: flex; flex-wrap: wrap; gap: 24px; }
+.social-compact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--green); }
+.contact-callout { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 28px; margin-top: 30px; border: 1px solid #91e56955; border-radius: var(--radius); background: var(--surface); }
+.contact-callout h3 { font-size: 22px; margin-bottom: 12px; }
+.contact-callout p { max-width: 620px; color: var(--muted); }
+.contact-callout .button { flex-shrink: 0; }
+.preparation-note { color: var(--muted); margin: 16px 0 24px; }
+.contact-submit:disabled { cursor: not-allowed; box-shadow: none; }
+.contact-submit:disabled:hover { transform: none; }
+.benefit-grid .text-link { display: inline-block; margin-top: 16px; color: var(--green); }
+@media (max-width: 760px) {
+  .team-intro { grid-template-columns: 1fr; gap: 24px; }
+  .team-intro > img { max-width: 260px; }
+  .contact-callout { flex-direction: column; align-items: stretch; padding: 22px; }
+  .contact-callout .button { white-space: normal; text-align: center; }
+  .team-details, .request-preparation { padding: 14px 18px; }
+}
+
+/* Align homepage section introductions and photo-card copy consistently. */
+body[data-page="accueil"] main > section > :is(.section-kicker, .section-title, .large-title, .section-description) { text-align: center; }
+body[data-page="accueil"] main > section > .section-description { max-width: 760px; margin-inline: auto; }
+body[data-page="accueil"] :is(.path-card, .expertise-card, .benefit-grid article) { text-align: center; }
+body[data-page="accueil"] .expertise-card img { margin-inline: auto; }
+body[data-page="accueil"] .benefit-grid .text-link { padding-inline: 24px; }
+
+/* Continuous gallery motion must not compete with scroll snapping or smooth scrolling. */
+.interactive [data-auto-gallery] .gallery-track { scroll-snap-type: none; scroll-behavior: auto; overflow-x: hidden; }
+.interactive [data-auto-gallery] .gallery-slide { scroll-snap-align: none; }
+.lightbox { transform-origin: center; }
+@media (prefers-reduced-motion: reduce) {
+  .interactive [data-auto-gallery] .gallery-track { overflow-x: auto; }
+}
+
+/* Wider homepage photographs, contained to match the surrounding sections. */
+[data-auto-gallery] { width: min(100%, 1440px); margin-inline: auto; }
+[data-auto-gallery] .gallery-track { padding-inline: clamp(20px, 6vw, 72px); }
+[data-auto-gallery] .gallery-slide { flex-basis: min(560px, 54vw); }
+@media (max-width: 700px) {
+  [data-auto-gallery] .gallery-slide { flex-basis: 88vw; }
 }

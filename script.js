@@ -130,28 +130,25 @@ function openDialog(dialog) {
   dialog.showModal();
   document.body.classList.add('modal-open');
 }
+function dismissDialog(dialog) {
+  if (dialog.animateClose) dialog.animateClose();
+  else dialog.close();
+}
 document.querySelectorAll('dialog').forEach(dialog => {
-  dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
+  dialog.querySelector('.dialog-close')?.addEventListener('click', () => dismissDialog(dialog));
   dialog.addEventListener('close', () => {
     if (!document.querySelector('dialog[open]')) document.body.classList.remove('modal-open');
   });
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const box = dialog.getBoundingClientRect();
-    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dismissDialog(dialog);
   });
 });
 const track = document.querySelector('.gallery-track');
 const lightbox = document.querySelector('.lightbox');
 if (track && lightbox) {
   const slides = [...track.querySelectorAll('.gallery-slide')];
-  slides.forEach(slide => {
-    const caption = document.createElement('span');
-    caption.className = 'gallery-caption';
-    caption.textContent = slide.querySelector('img').alt;
-    caption.setAttribute('aria-hidden', 'true');
-    slide.append(caption);
-  });
   const scrollBehavior = () => motionPreference.matches ? 'instant' : 'smooth';
   function moveGallery(direction) {
     const distance = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap);
@@ -161,16 +158,100 @@ if (track && lightbox) {
     if (target < -5) target = end;
     track.scrollTo({ left: Math.max(0, target), behavior: scrollBehavior() });
   }
-  document.querySelector('.gallery-prev').addEventListener('click', () => moveGallery(-1));
-  document.querySelector('.gallery-next').addEventListener('click', () => moveGallery(1));
+  document.querySelector('.gallery-prev')?.addEventListener('click', () => moveGallery(-1));
+  document.querySelector('.gallery-next')?.addEventListener('click', () => moveGallery(1));
+  const gallery = track.closest('[data-auto-gallery]');
+  let galleryPosition = track.scrollLeft;
+  let cycleWidth = 0;
+  let lastFrame;
+  let previewSource;
+  let previewAnimation;
+  let closing = false;
+  const previewImage = lightbox.querySelector('img');
+  const galleryCopies = [];
+  if (gallery) {
+    // Copies keep the loop seamless. They share the originals' preview handlers.
+    for (let copy = 0; copy < 2; copy++) {
+      slides.forEach((slide, index) => {
+        const clone = slide.cloneNode(true);
+        clone.tabIndex = -1;
+        clone.setAttribute('aria-hidden', 'true');
+        clone.dataset.galleryCopy = String(index);
+        track.append(clone);
+        galleryCopies.push(clone);
+        clone.addEventListener('click', () => showPhoto(index, clone));
+      });
+    }
+    function measureGallery() {
+      cycleWidth = galleryCopies[0].getBoundingClientRect().left - slides[0].getBoundingClientRect().left;
+      if (cycleWidth > 0) galleryPosition %= cycleWidth;
+    }
+    new ResizeObserver(measureGallery).observe(track);
+    measureGallery();
+    function glide(timestamp) {
+      const elapsed = lastFrame === undefined ? 0 : Math.min(timestamp - lastFrame, 64);
+      lastFrame = timestamp;
+      if (!motionPreference.matches && !document.hidden && !document.querySelector('dialog[open]') && cycleWidth > 0) {
+        // Keep a fractional position: integer scroll rounding must not stall slow motion.
+        galleryPosition = (galleryPosition + elapsed * 0.024) % cycleWidth;
+        track.scrollLeft = galleryPosition;
+      }
+      requestAnimationFrame(glide);
+    }
+    requestAnimationFrame(glide);
+  }
   let photoIndex = 0;
   function updatePhoto() {
     const source = slides[photoIndex];
     lightbox.querySelector('img').src = source.dataset.image;
     lightbox.querySelector('img').alt = source.querySelector('img').alt;
   }
-  slides.forEach((slide, index) => slide.addEventListener('click', () => { photoIndex = index; updatePhoto(); openDialog(lightbox); }));
-  function movePhoto(direction) { photoIndex = (photoIndex + direction + slides.length) % slides.length; updatePhoto(); }
+  function thumbnailTransform(source) {
+    const thumb = source?.getBoundingClientRect();
+    const full = lightbox.getBoundingClientRect();
+    if (!thumb || !full.width || !full.height || thumb.right <= 0 || thumb.left >= window.innerWidth || thumb.bottom <= 0 || thumb.top >= window.innerHeight) return 'scale(0.96)';
+    const x = thumb.left + thumb.width / 2 - full.left - full.width / 2;
+    const y = thumb.top + thumb.height / 2 - full.top - full.height / 2;
+    return `translate(${x}px, ${y}px) scale(${thumb.width / full.width}, ${thumb.height / full.height})`;
+  }
+  function animatePreview(frames, duration) {
+    previewAnimation?.cancel();
+    previewAnimation = lightbox.animate(frames, { duration, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    return previewAnimation.finished.catch(() => {});
+  }
+  function showPhoto(index, source) {
+    photoIndex = index;
+    previewSource = source;
+    updatePhoto();
+    openDialog(lightbox);
+    if (!motionPreference.matches) {
+      animatePreview([{ transform: thumbnailTransform(source), opacity: 0.35 }, { transform: 'none', opacity: 1 }], 300);
+    }
+  }
+  lightbox.animateClose = async () => {
+    if (closing || !lightbox.open) return;
+    closing = true;
+    if (!motionPreference.matches) {
+      await animatePreview([{ transform: 'none', opacity: 1 }, { transform: thumbnailTransform(previewSource), opacity: 0.15 }], 240);
+    }
+    lightbox.close();
+    if (gallery) track.scrollLeft = galleryPosition;
+    closing = false;
+  };
+  lightbox.addEventListener('cancel', event => { event.preventDefault(); dismissDialog(lightbox); });
+  slides.forEach((slide, index) => slide.addEventListener('click', () => showPhoto(index, slide)));
+  function movePhoto(direction) {
+    if (closing) return;
+    previewAnimation?.cancel();
+    photoIndex = (photoIndex + direction + slides.length) % slides.length;
+    updatePhoto();
+    const candidates = [slides[photoIndex], ...galleryCopies.filter(copy => Number(copy.dataset.galleryCopy) === photoIndex)];
+    previewSource = candidates.find(slide => {
+      const box = slide.getBoundingClientRect();
+      return box.right > 0 && box.left < window.innerWidth;
+    }) || slides[photoIndex];
+    if (!motionPreference.matches) previewImage.animate([{ opacity: 0.4 }, { opacity: 1 }], { duration: 180 });
+  }
   lightbox.querySelector('.lightbox-prev').addEventListener('click', () => movePhoto(-1));
   lightbox.querySelector('.lightbox-next').addEventListener('click', () => movePhoto(1));
   lightbox.addEventListener('keydown', event => {
@@ -293,6 +374,7 @@ if (contactForm) {
   if (query.get('type') === 'location' || supplied || query.has('materiel') || (selectionEntries().length && !query.has('prestation'))) contactForm.elements.type.value = 'location';
   const equipment = query.get('materiel');
   const service = query.get('prestation');
+  if (equipment || service) contactForm.querySelector('.request-preparation').open = true;
   if (equipment) contactForm.elements.message.value = `Je souhaite des informations pour : ${equipment.slice(0, 500)}.`;
   if (service) {
     contactForm.elements.message.value = `Mon projet concerne : ${service.slice(0, 500)}.`;
